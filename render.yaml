@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: trading-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python trading_bot.py
+    envVars:
+      - key: PROPR_API_KEY
+        sync: false        # sera saisi manuellement dans le dashboard Render
+      - key: PROPR_ACCOUNT_ID
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
